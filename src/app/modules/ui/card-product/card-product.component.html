@@ -1,0 +1,18 @@
+<div class="sample-product-card">
+  <div class="card-image">
+    <img [src]="product.images[0]" [alt]="product.title" />
+  </div>
+  <div class="card-detail">
+    <h3>{{product.title}}</h3>
+    <p class="description">
+      {{product.title}}
+    </p>
+    <div class="bottom-detail">
+      <p class="color">{{product.category}}</p>
+      <div class="sub-container">
+        <p class="price">{{product.price | currency}}</p>
+        <button (click)="addShoppingCart()" pButton>Add</button>
+      </div>
+    </div>
+  </div>
+</div>

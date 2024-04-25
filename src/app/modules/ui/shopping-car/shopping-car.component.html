@@ -1,0 +1,53 @@
+<div class="w-full grid">
+  <p-sidebar [(visible)]="sidebarVisible2" position="right">
+    <div class="title">
+      <h3>ShoppingCart</h3>
+      <button (click)="clearShoppingCart()"  type="button" class="p-element p-button p-component p-button-secondary">
+        <i class="pi pi-cart-minus"></i>
+      </button>
+    </div>
+    <p-messages severity="info">
+      <ng-template pTemplate>
+          <div class="ml-2">Productos obtenidos del store ShoppingCart.</div>
+      </ng-template>
+  </p-messages>
+    <div class="container">
+      @for (item of selectedProduct$ | async; track $index) {
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <i class="pi pi-ethereum" style="color: green"></i>
+            <p>{{ item.name }}</p>
+          </div>
+          <div class="card-content">
+            <p>{{ item.price | currency }}</p>
+            <p>Quantity: < {{ item.quantity }} ></p>
+          </div>
+        </div>
+        <div class="container-btns">
+          <button (click)="incrementProduct(item)" type="button" class="p-element p-button p-component">
+            <i class="pi pi-plus"></i>
+          </button>
+          <button (click)="decrementProduct(item)" type="button" class="p-element p-button p-component p-button-warning">
+            <i class="pi pi-minus"></i>
+          </button>
+          <button (click)="removeProduct(item)" type="button" class="p-element p-button p-component p-button-danger">
+            <i class="pi pi-trash"></i>
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+  </p-sidebar>
+  <button
+    class="btn-toggle"
+    pButton
+    type="button"
+    (click)="sidebarVisible2 = !sidebarVisible2"
+    severity="help"
+    raised
+    text
+  >
+    <i class="pi pi-fw pi-shopping-cart" style="font-size: 1.7rem"> </i>
+  </button>
+</div>

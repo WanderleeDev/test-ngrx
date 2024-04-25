@@ -1,0 +1,16 @@
+header {
+  display: flex;
+  flex-flow: wrap;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  @media screen and (min-width: 50rem)  {
+    justify-content: space-between;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

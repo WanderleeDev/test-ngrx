@@ -1,0 +1,16 @@
+p {
+  text-align: center;
+}
+.container {
+  padding: 4rem 1rem;
+  /* display: flex;
+  flex-flow: row wrap ;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  /* gap: 4rem; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+  gap: 2rem;
+  align-items: center;
+}
