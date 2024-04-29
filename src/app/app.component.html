@@ -1,15 +1,3 @@
 <main>
-  <app-navbar />
-  <app-shopping-car />
-  @if (isLoading$ | async) {
-  <app-spinner />
-  } @else {
-  <div class="container">
-    @for (product of products$ | async; track $index) {
-    <app-card-product [product]="product" />
-    }
-  </div>
-  } @if ((errorProducts$ | async)) {
-  <p>{{ errorProducts$ | async }}</p>
-  }
+
 </main>

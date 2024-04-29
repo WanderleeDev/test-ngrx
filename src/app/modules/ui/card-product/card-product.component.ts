@@ -9,20 +9,5 @@ import { addProduct } from '../../../state/actions/shoppingCar.action';
   styleUrl: './card-product.component.css',
 })
 export class CardProductComponent {
-  @Input({ required: true }) product!: ProductModel;
-  private readonly store: Store = inject(Store);
-
-  //TODO Store:  Aquí disparamos una acoin
-  public addShoppingCart() {
-    this.store.dispatch(
-      addProduct({
-        newProduct: {
-          id: this.product.id,
-          name: this.product.title,
-          price: this.product.price,
-          quantity: 1,
-        },
-      })
-    );
-  }
+  @Input({ required: true }) product!: any;
 }

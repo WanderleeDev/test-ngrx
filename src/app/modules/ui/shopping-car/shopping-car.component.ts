@@ -16,29 +16,6 @@ import {
   templateUrl: './shopping-car.component.html',
   styleUrl: './shopping-car.component.css',
 })
-export class ShoppingCarComponent implements OnInit {
-  private readonly store: Store<AppState> = inject(Store);
+export class ShoppingCarComponent {
   sidebarVisible2 = false;
-  products: Array<ShoppingCart> = [];
-  selectedProduct$ = this.store.select(selectCartItems);
-
-  ngOnInit(): void {
-    this.store.dispatch(loadShoppingCarSuccess());
-  }
-
-  public clearShoppingCart() {
-    this.store.dispatch(clearShoppingCar());
-  }
-
-  public decrementProduct(product: ShoppingCart) {
-    this.store.dispatch(removeProduct({ productToRemoved: product }));
-  }
-
-  public incrementProduct(product: ShoppingCart) {
-    this.store.dispatch(addProduct({ newProduct: product }));
-  }
-
-  public removeProduct(product: ShoppingCart) {
-    this.store.dispatch(removeSingleProduct({ productToRemoved: product }));
-  }
 }

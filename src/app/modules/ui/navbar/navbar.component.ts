@@ -5,12 +5,8 @@ import { Store } from '@ngrx/store';
 import { selectCategories } from '../../../state/selectors/categories.select';
 import { AppState } from '../../../state/app.state';
 import { setCategories } from '../../../state/actions/categories.action';
-import { IResponseProduct } from '../../../state/models/IResponseProducts.interface';
-import { map } from 'rxjs';
 import {
-  loadProducts,
   loadProductsByCategory,
-  loadedProducts,
 } from '../../../state/actions/products.actions';
 
 @Component({

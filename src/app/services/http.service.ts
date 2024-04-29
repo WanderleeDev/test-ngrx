@@ -6,13 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class HttpService {
+  private readonly URL_API = 'https://dummyjson.com/products';
   private readonly _http = inject(HttpClient);
 
-  public getData<T>(url: string): Observable<T> {
-    return this._http.get<T>(url);
+  public getData<T>(): Observable<T> {
+    return this._http.get<T>(this.URL_API);
   }
 
   public getProductForCategory<T>(category: string): Observable<T> {
-    return this._http.get<T>(`https://dummyjson.com/products/category/${category}`)
+    return this._http.get<T>(`${this.URL_API}/category/${category}`)
   }
 }
