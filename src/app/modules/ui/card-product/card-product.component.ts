@@ -1,7 +1,5 @@
-import { Component, Input, inject } from '@angular/core';
-import { ProductModel } from '../../../state/models/product.model';
-import { Store } from '@ngrx/store';
-import { addProduct } from '../../../state/actions/shoppingCar.action';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-card-product',

@@ -2,7 +2,7 @@
   <p-sidebar [(visible)]="sidebarVisible2" position="right">
     <div class="title">
       <h3>ShoppingCart</h3>
-      <button (click)="clearShoppingCart()"  type="button" class="p-element p-button p-component p-button-secondary">
+      <button type="button" class="p-element p-button p-component p-button-secondary">
         <i class="pi pi-cart-minus"></i>
       </button>
     </div>
@@ -12,7 +12,7 @@
       </ng-template>
   </p-messages>
     <div class="container">
-      @for (item of selectedProduct$ | async; track $index) {
+      <!-- @for (item of selectedProduct$ | async; track $index) {
       <div class="card">
         <div>
           <div class="card-header">
@@ -36,7 +36,7 @@
           </button>
         </div>
       </div>
-      }
+      } -->
     </div>
   </p-sidebar>
   <button
