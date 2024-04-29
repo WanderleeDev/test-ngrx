@@ -12,3 +12,6 @@ export const loadProductsError = createAction(
   '[Home] Load Products Error',
   props<{ error: string }>()
 );
+
+export const loadProductsByCategory
+  = createAction('[Home] Load Products By Category', props<{ category: string }>());

@@ -9,6 +9,7 @@ import { IResponseProduct } from '../../../state/models/IResponseProducts.interf
 import { map } from 'rxjs';
 import {
   loadProducts,
+  loadProductsByCategory,
   loadedProducts,
 } from '../../../state/actions/products.actions';
 
@@ -39,17 +40,7 @@ export class NavbarComponent implements OnInit {
   public getProductsForCategories(e: MenuItemCommandEvent) {
     if (!e.item?.label) return;
 
-    this._httpService
-      .getProductForCategory<IResponseProduct>(e.item.label)
-      .pipe(
-        map((res) => {
-          return res.products;
-        })
-      )
-      .subscribe((products) => {
-        this.store.dispatch(loadProducts()),
-          this.store.dispatch(loadedProducts({ products }));
-      });
+    this.store.dispatch(loadProductsByCategory({category: e.item.label}));
   }
 
   public generateCategoriesMenu() {

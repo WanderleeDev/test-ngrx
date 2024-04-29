@@ -3,6 +3,7 @@ import {
   loadProducts,
   loadedProducts,
   loadProductsError,
+  loadProductsByCategory,
 } from '../actions/products.actions';
 import { IProductState } from '../models/IProducts.state';
 
@@ -23,5 +24,12 @@ export const productsReducer = createReducer(
       isLoading: false,
     })
   ),
-  on(loadProductsError, (state, { error }): IProductState => ({ ...state, error, isLoading: false }))
+  on(
+    loadProductsError,
+    (state, { error }): IProductState => ({ ...state, error, isLoading: false })
+  ),
+  on(
+    loadProductsByCategory,
+    (state): IProductState => ({ ...state, isLoading: true })
+  )
 );
