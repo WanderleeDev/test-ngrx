@@ -11,7 +11,6 @@ export class NavbarComponent {
   private readonly _httpService: HttpService = inject(HttpService);
 
 
-  urlCategories = 'https://dummyjson.com/products/categories';
 
   items: MegaMenuItem[] = [];
 
